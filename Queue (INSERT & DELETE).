@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int data[5],fornt=-1,rear=-1;
+   int ch,iteam;
+   ch=0;
+   while(ch!=4){
+    printf("\n ########################################");
+    printf("\n\n            QUEUE OPERATION           ");
+    printf("\n1:INSERTION\n2:DELETION\n3:DISPLAY\n4:EXIT");
+    printf("\n Enter your choice :");
+    scanf("%d",&ch);
+    switch(ch){
+    case 1 : if(rear==4)printf("\n\nQUEE is FULL.");
+             else{
+                    if(fornt==-1){
+                        fornt=0;
+                    }
+                printf("\n\n Enter Data :");
+                scanf("%d",&iteam);
+                rear=rear+1;
+                data[rear]=iteam;
+             }
+             break;
+    case 2 : if(fornt==-1 || fornt>rear)printf("\n\n QUEUE is EMPTY.");
+             else{
+                printf("\n\n DELETION element : %d",data[fornt]);
+                fornt++;
+             }
+             break;
+    case 3 : if(fornt==-1)printf("\n\n QUEUE is EMPTY.");
+             else{
+                    printf("\n\nDisply element :");
+                    for(int i=0;i<=rear;i++){
+                       printf("\t%d",data[i]);
+                    }
+             }
+             break;
+    default : printf("\n\n Not a good choice....!");
+    }
+   }
+    return 0;
+}
