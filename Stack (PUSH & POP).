@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int data[5],top=-1;
+   int ch,iteam;
+   ch=0;
+   while(ch!=4){
+    printf("\n ########################################");
+    printf("\n\n            STACK OPERATION           ");
+    printf("\n1:PUSH\n2:POP\n3:PEEK\n4:EXIT");
+    printf("\n Enter your choice :");
+    scanf("%d",&ch);
+    switch(ch){
+    case 1 : if(top==4)printf("\n\n STACK is FULL.");
+             else{
+                printf("\n\n Enter Data :");
+                scanf("%d",&iteam);
+                top=top+1;
+                data[top]=iteam;
+             }
+             break;
+    case 2 : if(top==-1)printf("\n\n STACK is EMPTY.");
+             else{
+                printf("\n\n POP element : %d",data[top]);
+                top--;
+             }
+             break;
+    case 3 : if(top==-1)printf("\n\n STACK is EMPTY.");
+             else{
+                    printf("\n\nDisply element :");
+                    for(int i=0;i<=top;i++){
+                       printf("\t%d",data[i]);
+                       }
+               // printf("\n\n PEEK element : %d",data[top]);
+               // top--;
+             }
+             break;
+    default : printf("\n\n Not a good choice....!");
+    }
+   }
+    return 0;
+}
