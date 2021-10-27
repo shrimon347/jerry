@@ -343,7 +343,59 @@ class Student{
 	    System.out.println("Reversed Number: " + reversed);
 	}
 	
+	void calulate_power() {
+		
+		System.out.println("Enter the base and exponent number");
+		int base = s1.nextInt(); 
+		int exponent = s1.nextInt();
+
+	    long result = 1;
+
+	    while (exponent != 0) {
+	      result *= base;
+	      --exponent;
+	    }
+
+	    System.out.println("Answer = " + result);
+	}
 	
+	void palindrome() {
+		
+		System.out.println("Enter a string to check palindrome");
+		String str = s1.next(), reverseStr = "";
+	    
+	    int strLength = str.length();
+
+	    for (int i = (strLength - 1); i >=0; --i) {
+	      reverseStr = reverseStr + str.charAt(i);
+	    }
+
+	    if (str.toLowerCase().equals(reverseStr.toLowerCase())) {
+	      System.out.println(str + " is a Palindrome String.");
+	    }
+	    else {
+	      System.out.println(str + " is not a Palindrome String.");
+	    }
+	}
+	
+	void prime_number() {
+		
+		System.out.print("Enter the number : ");
+		int num = s1.nextInt();
+	    boolean flag = false;
+	    for (int i = 2; i <= num / 2; ++i) {
+	      // condition for nonprime number
+	      if (num % i == 0) {
+	        flag = true;
+	        break;
+	      }
+	    }
+
+	    if (!flag)
+	      System.out.println(num + " is a prime number.");
+	    else
+	      System.out.println(num + " is not a prime number.");
+	}
 
 }
 
@@ -372,7 +424,11 @@ public class Main {
 //		obj1.lcm_number();
 //		obj1.character();
 //		obj1.count_digit();
-		obj1.reverse_digit();
+//		obj1.reverse_digit();
+//		obj1.calulate_power();
+//		obj1.palindrome();
+		obj1.prime_number();
+		
 		
 
 	}
